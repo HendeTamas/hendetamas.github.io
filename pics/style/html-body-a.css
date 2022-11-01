@@ -1,0 +1,19 @@
+html,body{
+	margin:var(--margin);
+	padding:var(--padding);
+	font-family:Arial;
+	background-color:var(--bg-color1);
+	color: var(--font-color);
+	text-decoration:none;
+}
+a{
+	color: var(--font-color);
+	text-decoration:none;
+}
+
+.logo{
+	border-radius: 1000%;
+	border:solid 2px var(--logo-border-color);
+	box-shadow: 0 0 15px 0 var(--logo-box-shadow);
+	width:120px;
+}

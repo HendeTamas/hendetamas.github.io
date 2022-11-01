@@ -1,0 +1,16 @@
+:root{
+--bg-color1:#111;
+--bg-color2:#2225;
+--bg-color3:#3334;
+--bg-color4:#5553;
+--font-color: #fff;
+
+--logo-border-color:#3334;
+--logo-box-shadow:#fff5;
+
+--scrollbar-thumb-background-color:#333;
+--scrollbar-thumb-hover-background-color:#444;
+
+--margin:0;
+--padding:0;
+}
