@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <title>CLOCK</title>
+  
+  <style>
+    ::selection {
+      color: #9E9FA0;
+      background-color: transparent;
+    }
+
+    * {
+      margin: 0%;
+      padding: 0%;
+      text-decoration: none;
+    }
+
+    body {
+      font-family: arial;
+      background-color: var(--background-color);
+      color: var(--color);
+    }
+
+    #palert {
+      font-family: arial;
+      color: var(--color);
+      text-align: center;
+      cursor: default;
+      font-size: 60px;
+    }
+
+    #d_i_v {
+      margin-top: 10px;
+    }
+
+    :root {
+      --background-color: #111;
+      --color: #fff;
+      /**/
+      --A000_1: #3337;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setInterval(function () {
+        let currentTime = new Date();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let seconds = currentTime.getSeconds();
+        if (hours >= 24)
+          if (hours > 24) {
+            hours = hours - 24;
+          }
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        var clockTime = hours + ":" + minutes + ":" + seconds
+        var d = new Date();
+        var getday = d.getDay();
+        var weekday = new Array(7);
+        weekday[1] = "Hétfő";
+        weekday[2] = "Kedd";
+        weekday[3] = "Szerda";
+        weekday[4] = "Csütörtök";
+        weekday[5] = "Péntek";
+        weekday[6] = "Szombat";
+        weekday[0] = "Vasárnap";
+        var n = weekday[getday];
+        var dd = d.getDate();
+        var mm = d.getMonth() + 1;
+        var yyyy = d.getFullYear();
+        if (dd < 10) {
+          dd = "0" + dd;
+        }
+        if (mm < 10) {
+          mm = "0" + mm;
+        }
+        var today = yyyy + "." + mm + "." + dd + ".";
+        var displayWeekday = document.getElementById('day');
+        var displayDate = document.getElementById('date');
+        var clock = document.getElementById('clock');
+
+        function whatDayIsIt() {
+          displayWeekday.innerText = n;
+        }
+
+        function whatDateIsIt() {
+          displayDate.innerText = today;
+        }
+        whatDayIsIt();
+        whatDateIsIt();
+        clock.innerText = clockTime;
+      }, 0);
+    });
+  </script>
+<body>
+  <h1 id="palert">
+    <div class="parent">
+      <div id="d_i_v">
+	<label id="date"></label><br>
+          <label id="day"></label><br>
+          <label id="clock"></label>
+      </div>
+    </div>
+  </h1>
+
+
+</body></html>
