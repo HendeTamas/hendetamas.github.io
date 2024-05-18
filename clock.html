@@ -93,9 +93,9 @@
       let n = weekday[getday];
       let today = yyyy + "." + mm + "." + dd + ".";
 
-      let displayWeekday = document.getElementById('day');
-      let displayDate = document.getElementById('date');
-      let displayClock = document.getElementById('clock');
+      let displayWeekday = document.querySelector('day');
+      let displayDate = document.querySelector('date');
+      let displayClock = document.querySelector('clock');
 
       displayWeekday.innerText = n;
       displayDate.innerText = today;
@@ -107,13 +107,11 @@
 
 <body>
   <h1 id="palert">
-    <div id="parent">
       <div id="d_i_v">
-        <date id="date"></date>
-        <day id="day"></day>
-        <clock id="clock"></clock>
+        <date></date>
+        <day></day>
+        <clock></clock>
       </div>
-    </div>
   </h1>
 
 
